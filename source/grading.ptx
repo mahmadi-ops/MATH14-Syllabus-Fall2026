@@ -83,15 +83,15 @@
         <li>
           <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/sec-line-integrals.html">Line Integrals</url></p>
         </li>
+        <li>
+          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/sec-vector-fields.html">Vector Fields and Line Integrals</url></p>
+        </li>
+        <li>
+          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-conservative-fields.html">Path Independence, Conservative Fields, and Potential Functions</url></p>
+        </li>
       </ul>
     </p>
 
-    <!-- TODO: confirm where "Vector Fields and Line Integrals",             -->
-    <!-- "Path Independence, Conservative Fields, and Potential Functions",  -->
-    <!-- and "Polar Coordinates and Graphing Polar Equations" belong. They   -->
-    <!-- are not named in any review set's section list; Review Problems #2 -->
-    <!-- does contain a path-independence problem, so they are listed under  -->
-    <!-- Exam #2 for now.                                                    -->
     <p>
       <em>Exam #2</em> (Friday, October 30) <mdash/> see
       <url href="https://mahmadi-ops.github.io/MATH14-Skeletal/sec-exercises-review2-practice.html">Review Problems #2</url>:
@@ -99,12 +99,6 @@
 
     <p>
       <ul>
-        <li>
-          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/sec-vector-fields.html">Vector Fields and Line Integrals</url></p>
-        </li>
-        <li>
-          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-conservative-fields.html">Path Independence, Conservative Fields, and Potential Functions</url></p>
-        </li>
         <li>
           <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-double-integrals-rectangles.html">Double and Iterated Integrals Over Rectangles</url></p>
         </li>
@@ -136,9 +130,6 @@
 
     <p>
       <ul>
-        <li>
-          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-triple-integrals-spherical.html">Triple Integrals in Spherical Coordinates</url> (continued)</p>
-        </li>
         <li>
           <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-mass-center-of-mass.html">Applications: Mass and Center of Mass</url></p>
         </li>

@@ -4,24 +4,32 @@
 
   <introduction>
     <figure xml:id="fig-topics">
-      <!-- TODO: this illustration was drawn for MATH 13 (surfaces, tangent  -->
-      <!-- planes, gradients). Replace it, or its caption, for MATH 14.       -->
-      <caption>A tour of MATH 13: space curves, surfaces, and the tangent
-      planes and gradients we will use to study them.</caption>
+      <caption>A tour of MATH 14: curves and vector fields, double and
+      triple integrals, surfaces and flux, and the bridges <mdash/> the big
+      theorems <mdash/> that connect them.</caption>
       <image source="calculus-adventure.png" width="92%">
-        <shortdescription>A hiker crossing floating islands built from the curves and surfaces studied in MATH 13</shortdescription>
+        <shortdescription>A hiker on a floating island crossing bridges past a vector field, a polar grid, a curved surface, and a dome of flux arrows toward an observatory</shortdescription>
         <description>
           <p>
-            A colorful cartoon landscape of floating islands, each one built
-            from something we study this quarter. On the left island, a looping
-            space curve winds around a set of three-dimensional coordinate
-            axes, and a rainbow-colored saddle surface rises out of the grass.
-            A hiker with a backpack strides along the path between the islands.
-            On the right island, a rounded hill is capped by a flat tangent
-            plane, with a gold arrow rising from the point of tangency and blue
-            arrows fanning out across the plane. Below the hill, a line of
-            beads descends the slope toward a pool of ripples, suggesting a
-            path downhill to a minimum. Every one of these ideas is listed in
+            A colorful cartoon of a floating island built from the ideas of
+            this course. A hiker with a backpack and a walking stick stands
+            at the lower left, gesturing at the scene. A glowing golden path
+            <mdash/> a parametrized curve <mdash/> winds from the hiker's
+            feet across the whole island. Beside the hiker, a meadow is
+            covered in small blue arrows, a vector field, and a lake sits
+            inside a glowing closed loop, the boundary curve of a line
+            integral. Farther along, a flat region is ruled into a
+            rectangular grid on one side and a polar grid of circles and
+            rays on the other, the regions of double integrals. Small golden
+            bridges carry the path over gaps in the island, the theorems
+            that connect one kind of integral to the next. To the right, a
+            rainbow-colored curved surface is drawn with a grid and arrows
+            flowing across it, a surface integral, and a transparent dome
+            bristles with arrows pointing outward through it, the flux of a
+            vector field out of a closed surface. Waterfalls spill off the
+            island's edges. The path climbs to a summit where an observatory
+            tower and a large glass globe stand, the destination at the end
+            of the quarter. Every one of these ideas is listed in
             <xref ref="specific-goals" text="title"/>.
           </p>
         </description>
