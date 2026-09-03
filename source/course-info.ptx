@@ -4,6 +4,8 @@
 
   <introduction>
     <figure xml:id="fig-topics">
+      <!-- TODO: this illustration was drawn for MATH 13 (surfaces, tangent  -->
+      <!-- planes, gradients). Replace it, or its caption, for MATH 14.       -->
       <caption>A tour of MATH 13: space curves, surfaces, and the tangent
       planes and gradients we will use to study them.</caption>
       <image source="calculus-adventure.png" width="92%">
@@ -30,7 +32,7 @@
       <dl>
         <li>
           <title>Course</title>
-          <p>MATH 13 <mdash/> Calculus and Analytic Geometry III</p>
+          <p>MATH 14 <mdash/> Calculus and Analytic Geometry IV</p>
         </li>
         <li>
           <title>Instructor</title>
@@ -54,20 +56,20 @@
         <li>
           <title>Prerequisite</title>
           <p>
-            MATH 12 or equivalent. A grade of C<ndash/> or higher in MATH 12 is
-            strongly recommended before taking MATH 13.
+            MATH 13 or equivalent. A grade of C<ndash/> or higher in MATH 13 is
+            strongly recommended before taking MATH 14.
           </p>
         </li>
       </dl>
     </p>
 
     <p>
-      This syllabus applies to both sections of MATH 13 listed in
-      <xref ref="table-sections"/>. Please attend the section you are enrolled in.
+      This syllabus applies to section 14-5 of MATH 14, whose meeting time and
+      room are listed in <xref ref="table-sections"/>.
     </p>
 
     <table xml:id="table-sections">
-      <title>Meeting times and rooms for the two sections</title>
+      <title>Meeting time and room</title>
       <tabular halign="left" top="minor" bottom="minor">
         <col width="22%"/>
         <col width="18%"/>
@@ -80,16 +82,10 @@
           <cell>Room</cell>
         </row>
         <row>
-          <cell>MATH 13-3</cell>
+          <cell>MATH 14-5</cell>
           <cell>M W F</cell>
-          <cell>9:15 <ndash/> 10:20 AM</cell>
-          <cell>Daly Science 303</cell>
-        </row>
-        <row>
-          <cell>MATH 13-4</cell>
-          <cell>M W F</cell>
-          <cell>10:30 <ndash/> 11:35 AM</cell>
-          <cell>Daly Science 303</cell>
+          <cell>1:00 <ndash/> 2:05 PM</cell>
+          <cell>O'Connor Hall 206</cell>
         </row>
       </tabular>
     </table>

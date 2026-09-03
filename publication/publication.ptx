@@ -82,6 +82,6 @@
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <html>
       <css theme="default-modern"/>
-      <baseurl href="https://mahmadi-ops.github.io/MATH13-Syllabus-Fall2026/"/>
+      <baseurl href="https://mahmadi-ops.github.io/MATH14-Syllabus-Fall2026/"/>
     </html>
 </publication>

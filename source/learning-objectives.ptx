@@ -16,24 +16,24 @@
   <subsection xml:id="specific-goals">
     <title>More Specific Goals</title>
     <p>
-      In MATH 11, you learned about derivatives. In MATH 12, you learned about
-      integrals. In MATH 13, we will study the following topics and some of
-      their applications.
+      In MATH 13, you learned about vectors, curves and surfaces in space, and
+      the partial derivatives of functions of several variables. In MATH 14, we
+      will study the following topics and some of their applications.
     </p>
     <p>
       <ol>
-        <li><p>Hyperbolic functions</p></li>
-        <li><p>Infinite series, Taylor series, and binomial series</p></li>
-        <li><p>Parametrization of plane curves</p></li>
-        <li><p>Three-dimensional coordinate systems and vectors</p></li>
-        <li><p>The dot product and the cross product</p></li>
-        <li><p>Lines and planes in space</p></li>
-        <li><p>Conic sections, cylinders, and quadric surfaces</p></li>
-        <li><p>Functions of several variables and their limits</p></li>
-        <li><p>Partial derivatives and the chain rule</p></li>
-        <li><p>Directional derivatives and gradient vectors</p></li>
-        <li><p>Tangent planes and differentials</p></li>
-        <li><p>Extreme values, saddle points, and the Lagrange multipliers method</p></li>
+        <li><p>Parametrization of curves and arc length</p></li>
+        <li><p>Line integrals of scalar functions</p></li>
+        <li><p>Vector fields, work, circulation, and flux; line integrals of vector fields</p></li>
+        <li><p>Path independence, conservative fields, and potential functions</p></li>
+        <li><p>Double integrals over rectangles and over general regions, and area by double integration</p></li>
+        <li><p>Polar coordinates and double integrals in polar form</p></li>
+        <li><p>Triple integrals in rectangular, cylindrical, and spherical coordinates</p></li>
+        <li><p>Applications: mass and center of mass</p></li>
+        <li><p>Substitution in multiple integrals and the Jacobian determinant</p></li>
+        <li><p>Surface integrals and flux through a surface</p></li>
+        <li><p>Green's theorem in the plane</p></li>
+        <li><p>Stokes' theorem and the divergence theorem</p></li>
       </ol>
     </p>
   </subsection>

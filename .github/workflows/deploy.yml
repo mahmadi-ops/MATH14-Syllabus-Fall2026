@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p site
           cp -r output/web/. site/
-          cp output/print/math13-syllabus-fall2026.pdf site/
+          cp output/print/math14-syllabus-fall2026.pdf site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

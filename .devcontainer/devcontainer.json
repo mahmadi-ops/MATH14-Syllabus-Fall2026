@@ -1,7 +1,7 @@
 {
   // Same image the deploy workflow uses, so a local build matches CI byte for byte.
   // It ships TeX Live, so `pretext build print` works in here too.
-  "name": "MATH 13 Syllabus (PreTeXt)",
+  "name": "MATH 14 Syllabus (PreTeXt)",
   "image": "pretextbook/pretext:latest",
 
   // Pin the CLI to requirements.txt, mirroring the "Install pinned PreTeXt CLI" step.

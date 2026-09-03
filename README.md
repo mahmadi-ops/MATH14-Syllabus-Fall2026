@@ -1,11 +1,11 @@
-# MATH 13 Syllabus — Fall 2026
+# MATH 14 Syllabus — Fall 2026
 
-Syllabus for MATH 13 (Fall 2026, Santa Clara University), authored in
+Syllabus for MATH 14 (Fall 2026, Santa Clara University), authored in
 [PreTeXt](https://pretextbook.org) and published automatically to GitHub Pages
 in two formats:
 
-- **Accessible website:** https://mahmadi-ops.github.io/MATH13-Syllabus-Fall2026/
-- **Printable PDF:** https://mahmadi-ops.github.io/MATH13-Syllabus-Fall2026/math13-syllabus-fall2026.pdf
+- **Accessible website:** https://mahmadi-ops.github.io/MATH14-Syllabus-Fall2026/
+- **Printable PDF:** https://mahmadi-ops.github.io/MATH14-Syllabus-Fall2026/math14-syllabus-fall2026.pdf
 
 ## How it works
 
@@ -26,7 +26,7 @@ All content lives in `source/`:
 | --- | --- |
 | `source/main.ptx` | Title, subtitle, and the order of the sections |
 | `source/frontmatter.ptx` | Author block and the abstract (with the PDF link) |
-| `source/course-info.ptx` | Course details, the two sections, office hours |
+| `source/course-info.ptx` | Course details, section 14-5, office hours |
 | `source/materials.ptx` | Textbook and lecture notes |
 | `source/grading.ptx` | Course components and letter grades |
 | `source/assignments.ptx` | Assignments and Gradescope submission |

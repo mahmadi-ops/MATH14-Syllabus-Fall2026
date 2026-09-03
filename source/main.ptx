@@ -3,11 +3,11 @@
 
   <docinfo>
     <directories external="../assets"/>
-    <document-id>ahmadi-math13-fall2026</document-id>
+    <document-id>ahmadi-math14-fall2026</document-id>
   </docinfo>
 
-  <article xml:id="math13-syllabus">
-    <title>MATH 13</title>
+  <article xml:id="math14-syllabus">
+    <title>MATH 14</title>
     <subtitle>Fall Quarter 2026 <ndash/> Santa Clara University</subtitle>
 
     <xi:include href="./frontmatter.ptx" />
