@@ -18,8 +18,11 @@
 
         <!-- Set which marked elements are included in this version.  The -->
         <!-- value is a space-separated list of component names of your   -->
-        <!-- own choosing.                                                -->
-        <!--<version include="videos labs"/>-->
+        <!-- own choosing.  The grade calculator (grading.ptx) is marked   -->
+        <!-- component="web" and its PDF stand-in component="print"; the  -->
+        <!-- print target uses publication-print.ptx, identical to this   -->
+        <!-- file except that it includes "print" instead of "web".       -->
+        <version include="web"/>
     </source>
 
     <common>

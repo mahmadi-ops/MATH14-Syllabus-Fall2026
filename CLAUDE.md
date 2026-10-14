@@ -25,3 +25,11 @@ period, and the same office hours.
 
 Validate any edit with `xmllint --noout source/<file>.ptx` before
 committing; publishing happens when the change reaches `main`.
+
+The grade calculator in "Dropping the Lowest Midterm Grade"
+(`source/grading.ptx`, `assets/grade-calculator.html`, copied from the
+MATH 13 one in `mahmadi-ops/MATH13-Skeletal-Instructor`) is web-only: it is
+marked `component="web"` and its PDF stand-in `component="print"`.
+`publication/publication.ptx` has `<version include="web"/>`; the print
+target uses `publication/publication-print.ptx`, identical except for
+`<version include="print"/>`. Keep the two publication files in step.

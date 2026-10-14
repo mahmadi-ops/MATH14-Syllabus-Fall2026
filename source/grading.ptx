@@ -166,6 +166,80 @@
     </p>
   </subsection>
 
+  <!--
+    The calculator, assets/grade-calculator.html (copied from the MATH 13
+    one), is marked component="web": publication/publication.ptx keeps it
+    and publication/publication-print.ptx drops it, so the PDF has the
+    print paragraph pointing to the web page instead. It is a bare
+    interactive, not a figure, so that the web page and the PDF number
+    their figures and tables the same.
+  -->
+  <subsection xml:id="drop-lowest-midterm">
+    <title>Dropping the Lowest Midterm Grade</title>
+
+    <p>
+      Your lowest midterm exam score is dropped. Your best two midterms, out
+      of 40 points, are scaled to the full 60 midterm points of
+      <xref ref="table-components"/>, so the midterms still count for 60% of
+      your course grade:
+      <md>
+        <mrow>\text{Midterm points} = \frac{\text{sum of your best two midterms}}{40}\times 60.</mrow>
+      </md>
+      The final exam (30 points) and the assignments (10 points) are
+      unchanged, and your total out of 100 becomes a letter grade with the
+      percentage ranges in <xref ref="table-letter-grades"/>.
+    </p>
+
+    <table xml:id="table-grade-drop-example">
+      <title>An example: from a C+ to a B+</title>
+      <tabular halign="left" top="minor" bottom="minor">
+        <col/>
+        <col halign="right"/>
+        <col halign="right"/>
+        <col halign="right"/>
+        <row header="yes" bottom="minor">
+          <cell>Component</cell>
+          <cell>Score</cell>
+          <cell>Without the drop</cell>
+          <cell>With the drop</cell>
+        </row>
+        <row><cell>Exam #1</cell><cell>8 / 20</cell><cell>8</cell><cell>dropped</cell></row>
+        <row><cell>Exam #2</cell><cell>18 / 20</cell><cell>18</cell><cell>18</cell></row>
+        <row><cell>Exam #3</cell><cell>18 / 20</cell><cell>18</cell><cell>18</cell></row>
+        <row><cell>Midterm points (out of 60)</cell><cell/><cell><m>8 + 18 + 18 = 44</m></cell><cell><m>\frac{18 + 18}{40}\times 60 = 54</m></cell></row>
+        <row><cell>Final Exam</cell><cell>25 / 30</cell><cell>25</cell><cell>25</cell></row>
+        <row bottom="minor"><cell>Assignments</cell><cell>9 / 10</cell><cell>9</cell><cell>9</cell></row>
+        <row><cell>Total (out of 100)</cell><cell/><cell>78 (C+)</cell><cell>88 (B+)</cell></row>
+      </tabular>
+    </table>
+
+    <p>
+      The best two midterms come to 36 out of 40, which is 90%, and that 90%
+      counts for all 60 midterm points. The weak first exam simply stops
+      counting.
+    </p>
+
+    <p component="web">
+      Enter your scores in the calculator below to see your course grade with
+      the lowest midterm dropped. Leave a box empty for an exam you have not
+      taken yet: empty boxes count as 0, so the total shown is the lowest the
+      scores you entered can give, and your letter grade appears once all five
+      scores are entered. While the final is still to come, the calculator
+      lists the final exam score each letter grade needs.
+    </p>
+
+    <interactive component="web" xml:id="interactive-grade-calculator"
+                 iframe="grade-calculator.html"
+                 width="100%" aspect="15:16"/>
+
+    <p component="print">
+      The web version of this syllabus has a grade calculator in this
+      subsection: enter your scores and it shows your course grade with the
+      lowest midterm dropped. It is at
+      <url href="https://mahmadi-ops.github.io/MATH14-Syllabus-Fall2026/math14-syllabus.html#drop-lowest-midterm" visual="mahmadi-ops.github.io/MATH14-Syllabus-Fall2026"/>.
+    </p>
+  </subsection>
+
   <subsection xml:id="letter-grades">
     <title>Letter Grades</title>
 

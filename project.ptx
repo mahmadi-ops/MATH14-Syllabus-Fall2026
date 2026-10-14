@@ -5,6 +5,8 @@
 <project ptx-version="2">
   <targets>
     <target name="web" format="html" />
-    <target name="print" format="pdf" output-filename="math14-syllabus-fall2026.pdf" />
+    <!-- publication-print.ptx drops the web-only grade calculator. -->
+    <target name="print" format="pdf" publication="publication-print.ptx"
+            output-filename="math14-syllabus-fall2026.pdf" />
   </targets>
 </project>
