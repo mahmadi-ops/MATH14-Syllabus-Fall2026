@@ -26,7 +26,7 @@ period, and the same office hours.
 Validate any edit with `xmllint --noout source/<file>.ptx` before
 committing; publishing happens when the change reaches `main`.
 
-The grade calculator in "Dropping the Lowest Midterm Grade"
+The grade calculator in the "Grade Calculator" subsection
 (`source/grading.ptx`, `assets/grade-calculator.html`, copied from the
 MATH 13 one in `mahmadi-ops/MATH13-Skeletal-Instructor`) is web-only: it is
 marked `component="web"` and its PDF stand-in `component="print"`.
