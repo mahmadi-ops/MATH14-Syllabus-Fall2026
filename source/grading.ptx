@@ -221,16 +221,20 @@
 
     <p component="web">
       Enter your scores in the calculator below to see your course grade with
-      the lowest midterm dropped. Leave a box empty for an exam you have not
+      the lowest midterm dropped and any bonus points added. Bonus points are
+      added to your best two midterms after the lowest one is dropped, so they
+      count no matter which midterm is dropped, and your midterm total cannot
+      go above 40 out of 40. Leave a box empty for an exam you have not
       taken yet: empty boxes count as 0, so the total shown is the lowest the
-      scores you entered can give, and your letter grade appears once all five
-      scores are entered. While the final is still to come, the calculator
-      lists the final exam score each letter grade needs.
+      scores you entered can give, and your letter grade appears once the
+      three midterms, the final, and the assignments are entered (the bonus
+      points box is optional). While the final is still to come, the
+      calculator lists the final exam score each letter grade needs.
     </p>
 
     <interactive component="web" xml:id="interactive-grade-calculator"
                  iframe="grade-calculator.html"
-                 width="100%" aspect="15:16"/>
+                 width="100%" aspect="15:19"/>
 
     <p component="print">
       The web version of this syllabus has a grade calculator in this
