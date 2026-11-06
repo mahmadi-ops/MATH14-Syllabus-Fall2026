@@ -144,21 +144,21 @@
         <li>
           <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-greens-theorem.html">Green's Theorem in the Plane</url></p>
         </li>
+        <li>
+          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-stokes-theorem.html">Stokes' Theorem</url></p>
+        </li>
       </ul>
     </p>
 
     <p>
       <alert>The final exam is cumulative.</alert> Every topic listed above is
-      fair game on it, together with the two remaining topics we cover after
+      fair game on it, together with the remaining topic we cover after
       Exam #3, whose leftover problems are collected in
       <url href="https://mahmadi-ops.github.io/MATH14-Skeletal/sec-exercises-review4-practice.html">Review Problems #4</url>:
     </p>
 
     <p>
       <ul>
-        <li>
-          <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-stokes-theorem.html">Stokes' Theorem</url></p>
-        </li>
         <li>
           <p><url href="https://mahmadi-ops.github.io/MATH14-Skeletal/section-divergence-theorem.html">The Divergence Theorem</url></p>
         </li>
