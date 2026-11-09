@@ -219,12 +219,21 @@
       counting.
     </p>
 
+    <p>
+      <alert>Exam #3 can be dropped only if you score at least 5/20 on it.</alert>
+      A blank or nearly blank Exam #3 counts toward your grade, and the lower
+      of Exams #1 and #2 is dropped instead. This does not apply to an excused
+      absence from Exam #3 arranged with me in advance.
+    </p>
+
     <p component="web">
       Enter your scores in the calculator below to see your course grade with
       the lowest midterm dropped and any bonus points added. Bonus points are
       added to your best two midterms after the lowest one is dropped, so they
       count no matter which midterm is dropped, and your midterm total cannot
-      go above 40 out of 40. Leave a box empty for an exam you have not
+      go above 40 out of 40. An Exam #3 score below 5 out of 20 is never
+      dropped, unless you tick the box for an excused absence arranged in
+      advance. Leave a box empty for an exam you have not
       taken yet: empty boxes count as 0, so the total shown is the lowest the
       scores you entered can give, and your letter grade appears once the
       three midterms, the final, and the assignments are entered (the bonus
@@ -234,7 +243,7 @@
 
     <interactive component="web" xml:id="interactive-grade-calculator"
                  iframe="grade-calculator.html"
-                 width="100%" aspect="15:19"/>
+                 width="100%" aspect="15:20"/>
 
     <p component="print">
       The web version of this syllabus has a grade calculator in this

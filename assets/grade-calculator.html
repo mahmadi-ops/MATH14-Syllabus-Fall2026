@@ -14,6 +14,12 @@
     three midterms out of 20, final out of 30, assignments out of 10;
     the lowest midterm is dropped and the best two (out of 40) are scaled
     to the full 60 midterm points:  midterm points = (best two) / 40 * 60.
+  Exam #3 can be dropped only with a score of at least 5 / 20 on it: a blank
+    or nearly blank Exam #3 counts, and the lower of Exams #1 and #2 is
+    dropped instead. The "excused absence" box (arranged with the instructor
+    in advance) lifts this, and Exam #3 is then dropped as if missing. An
+    empty Exam #3 box is read as an exam still to come that will be a real
+    attempt, so it can still be dropped (the old behaviour).
   Bonus points (optional, out of 6, from the bonus question on Exam #3):
     added to the best two AFTER the drop, so they count whichever midterm
     is dropped, and the midterm total is capped at 40:
@@ -22,7 +28,7 @@
 
   Empty boxes count as 0, so with scores still missing the page shows the
   lowest total the entered scores can give (every rule here only rises as
-  scores are added). The letter grade is shown only once all five required
+  scores are added, apart from the Exam #3 box above). The letter grade is shown only once all five required
   scores are entered (the bonus points box is optional, so it never holds the
   letter back), so a partial total never reads as a final grade. Light only;
   fonts are Open Sans and PT Serif.
@@ -56,6 +62,8 @@
   .field input[aria-invalid="true"]{border-color:var(--error);background:#FFF5F4}
   .field .of{color:var(--muted);font-variant-numeric:tabular-nums}
   .field .opt{display:block;font-weight:400;font-size:.8rem;color:var(--muted);line-height:1.2}
+  .check{display:flex;align-items:flex-start;gap:7px;font-size:.85rem;color:var(--muted);padding:0 0 5px;line-height:1.3}
+  .check input{margin:2px 0 0;flex:none}
   .err{grid-column:1 / -1;color:var(--error);font-size:.85rem;margin:-2px 0 2px}
   .hint{color:var(--muted);font-size:.85rem;margin:8px 0 0}
   .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
@@ -102,10 +110,12 @@
     <div class="field"><label for="e1">Exam #1</label><input id="e1" inputmode="decimal" autocomplete="off"><span class="of">/ 20</span></div>
     <div class="field"><label for="e2">Exam #2</label><input id="e2" inputmode="decimal" autocomplete="off"><span class="of">/ 20</span></div>
     <div class="field"><label for="e3">Exam #3</label><input id="e3" inputmode="decimal" autocomplete="off"><span class="of">/ 20</span></div>
+    <label class="check"><input type="checkbox" id="ex3">Excused from Exam #3 (arranged in advance)</label>
     <div class="field bonus"><label for="bon">Bonus points <span class="opt">optional</span></label><input id="bon" inputmode="decimal" autocomplete="off" aria-describedby="bon-hint"><span class="of">/ 6</span></div>
     <div class="field"><label for="fin">Final Exam</label><input id="fin" inputmode="decimal" autocomplete="off"><span class="of">/ 30</span></div>
     <div class="field"><label for="asg">Assignments</label><input id="asg" inputmode="decimal" autocomplete="off"><span class="of">/ 10</span></div>
     <p class="hint">Leave a box empty if you have not taken that exam yet. Assignments: your total of the ten 1-point assignments.</p>
+    <p class="hint">Exam #3 can be dropped only with a score of at least 5 / 20.</p>
     <p class="hint" id="bon-hint">Bonus points: added to your best two midterms after the drop, up to 40.</p>
     <div class="buttons">
       <button type="button" id="clear">Clear all</button>
@@ -122,7 +132,7 @@
     <h2>Your course grade</h2>
     <div class="total"><span class="num" id="total">&nbsp;</span><span class="letter" id="letter">&nbsp;</span></div>
     <p class="compare" id="compare"></p>
-    <p class="lowest" id="lowest" hidden>Empty boxes count as 0, so this is the <b>lowest</b> total the scores you entered can give. It can only go up from here. Your letter grade appears once the three midterms, the final, and the assignments are entered; the bonus points box is optional.</p>
+    <p class="lowest" id="lowest" hidden>Empty boxes count as 0, so this is the <b>lowest</b> total the scores you entered can give<span id="lowest-e3">, as long as you make a real attempt (at least 5 / 20) on Exam #3</span>. It can only go up from here. Your letter grade appears once the three midterms, the final, and the assignments are entered; the bonus points box is optional.</p>
     <table>
       <thead><tr><th>Component</th><th class="n">Score</th><th class="n">Points</th></tr></thead>
       <tbody id="rows"></tbody>
@@ -144,6 +154,7 @@
   ];
   // The syllabus example (table-grade-drop-example), so no bonus points.
   var EXAMPLE = { e1: "8", e2: "18", e3: "18", fin: "25", asg: "9" };
+  var E3_MIN = 5; // Exam #3 can be dropped only with at least 5 / 20 on it.
   var MID_CAP = 40; // best two midterms plus bonus points cannot go above 40.
   // Syllabus table-letter-grades, applied to the unrounded total.
   var LETTERS = [[94, "A"], [90, "A−"], [87, "B+"], [83, "B"], [80, "B−"], [77, "C+"],
@@ -155,11 +166,6 @@
   function fmt1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
   function letterOf(t) { for (var i = 0; i < LETTERS.length; i++) if (t >= LETTERS[i][0] - 1e-9) return LETTERS[i][1]; return "F"; }
 
-  // Best two of the three midterms (missing ones count as 0), out of 40.
-  function bestTwo(scores) {
-    var s = scores.slice().sort(function (a, b) { return b - a; });
-    return s[0] + s[1];
-  }
   // Midterm total out of 40 scaled to the 60 midterm points.
   function toPoints(midTotal) { return midTotal / 40 * 60; }
 
@@ -189,13 +195,20 @@
   function render() {
     var r = read(), v = r.vals;
     var mids = ["e1", "e2", "e3"].map(function (k) { return v[k] == null ? 0 : v[k]; });
-    // Bonus points are optional: an empty box never holds the letter back.
-    var missing = FIELDS.some(function (f) { return !f.optional && v[f.id] == null; });
+    var ex3 = $("ex3").checked;
+    // Bonus points are optional: an empty box never holds the letter back,
+    // and neither does an empty Exam #3 box with an excused absence.
+    var missing = FIELDS.some(function (f) {
+      return !f.optional && v[f.id] == null && !(f.id === "e3" && ex3);
+    });
+    // Exam #3 under 5 / 20 (and not excused) counts: it cannot be dropped.
+    var e3Counts = v.e3 != null && v.e3 < E3_MIN && !ex3;
 
-    // Which midterm is dropped: the lowest entered score, or an empty box.
-    var dropIdx = 0;
-    for (var i = 1; i < 3; i++) if (mids[i] < mids[dropIdx]) dropIdx = i;
-    var best = bestTwo(mids), bon = v.bon == null ? 0 : v.bon;
+    // Which midterm is dropped: the lowest entered score, or an empty box,
+    // among the midterms that can be dropped.
+    var dropIdx = 0, canDrop = e3Counts ? 2 : 3;
+    for (var i = 1; i < canDrop; i++) if (mids[i] < mids[dropIdx]) dropIdx = i;
+    var best = mids[0] + mids[1] + mids[2] - mids[dropIdx], bon = v.bon == null ? 0 : v.bon;
     // Bonus points are added after the drop; the midterm total stops at 40.
     var capped = best + bon > MID_CAP + 1e-9;
     var midTotal = Math.min(MID_CAP, best + bon);
@@ -214,12 +227,15 @@
       ? "Without the bonus points: <b>" + scoreText(noBonus) + "</b><br>Without the drop or the bonus points: <b>" + scoreText(noDrop) + "</b>"
       : "Without the drop: <b>" + scoreText(noDrop) + "</b>";
     $("lowest").hidden = !missing;
+    $("lowest-e3").hidden = !(v.e3 == null && !ex3);
 
     var rows = "";
     ["e1", "e2", "e3"].forEach(function (k, j) {
       var shown = v[k] == null ? "—" : fmt(v[k]);
       var dropped = j === dropIdx;
-      var note = dropped ? (v[k] == null ? " (not taken yet)" : " (dropped)") : "";
+      var note = dropped
+        ? (v[k] == null ? (j === 2 && ex3 ? " (excused)" : " (not taken yet)") : " (dropped)")
+        : (j === 2 && e3Counts ? " (under 5 / 20: counts)" : "");
       rows += '<tr' + (dropped ? ' class="dropped"' : '') + '><td>' + FIELDS[j].label + note +
               '</td><td class="n"><span>' + shown + '</span> / 20</td><td class="n">' + (dropped ? "—" : "") + '</td></tr>';
     });
@@ -251,7 +267,8 @@
       $("need-rows").innerHTML = out;
       $("need-note").textContent = (v.e1 == null || v.e2 == null || v.e3 == null)
         ? "Final exam score (out of 30) needed for each letter grade, with empty midterm boxes counted as 0. A good score on a midterm still to come" +
-          (v.e3 == null && v.bon == null ? ", or bonus points," : "") + " lowers these."
+          (v.e3 == null && v.bon == null ? ", or bonus points," : "") + " lowers these." +
+          (v.e3 == null && !ex3 ?  " This assumes at least 5 / 20 on Exam #3." : "")
         : "Final exam score (out of 30) needed for each letter grade.";
       needBox.hidden = false;
     } else needBox.hidden = true;
@@ -259,11 +276,15 @@
     try {
       var keepBoxes = {};
       FIELDS.forEach(function (f) { keepBoxes[f.id] = $(f.id).value; });
+      keepBoxes.ex3 = $("ex3").checked;
       localStorage.setItem(STORE, JSON.stringify(keepBoxes));
     } catch (e) {}
   }
 
-  function fill(obj) { FIELDS.forEach(function (f) { $(f.id).value = obj[f.id] || ""; }); }
+  function fill(obj) {
+    FIELDS.forEach(function (f) { $(f.id).value = obj[f.id] || ""; });
+    $("ex3").checked = !!obj.ex3;
+  }
   function markExample(on) { $("example-tag").hidden = !on; }
 
   // Saved boxes are an object keyed by box id. Before the bonus points box they were
@@ -278,10 +299,12 @@
   }
   if (saved && typeof saved === "object") {
     FIELDS.forEach(function (f) { $(f.id).value = saved[f.id] == null ? "" : String(saved[f.id]); });
-    markExample(FIELDS.every(function (f) { return $(f.id).value === (EXAMPLE[f.id] || ""); }));
+    $("ex3").checked = saved.ex3 === true;
+    markExample(!$("ex3").checked && FIELDS.every(function (f) { return $(f.id).value === (EXAMPLE[f.id] || ""); }));
   } else { fill(EXAMPLE); markExample(true); }
 
   FIELDS.forEach(function (f) { $(f.id).addEventListener("input", function () { markExample(false); render(); }); });
+  $("ex3").addEventListener("change", function () { markExample(false); render(); });
   $("clear").addEventListener("click", function () { fill({}); markExample(false); render(); $("e1").focus(); });
   $("example").addEventListener("click", function () { fill(EXAMPLE); markExample(true); render(); });
   $("scores").addEventListener("submit", function (e) { e.preventDefault(); });
